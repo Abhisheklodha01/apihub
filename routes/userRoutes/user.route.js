@@ -4,7 +4,8 @@ import {
   resendVerificationCode,
   registerUserController,
   signInUserController,
-  forgotPasswordController
+  forgotPasswordController,
+  getUserProfile
 } from "../index.js";
 
 const router = express.Router()

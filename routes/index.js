@@ -6,7 +6,8 @@ import {
   forgotPasswordController,
   addTodo,
   getTodos,
-  getTodoById
+  getTodoById,
+  getUserProfile
 } from "../controllers/index.js";
 import userRouter from './userRoutes/user.route.js'
 import todoRouter from './todoRoutes/todo.route.js'
@@ -20,5 +21,6 @@ export {
   addTodo,
   todoRouter,
   getTodos,
-  getTodoById
+  getTodoById,
+  getUserProfile
 }

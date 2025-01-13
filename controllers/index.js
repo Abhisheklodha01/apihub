@@ -4,6 +4,7 @@ import {
   registerUserController,
   signInUserController,
   forgotPasswordController,
+  getUserProfile
 } from "./userControllers/user.js";
 
 import { User } from "../models/index.js";
@@ -21,4 +22,5 @@ export {
   addTodo,
   getTodos,
   getTodoById,
+  getUserProfile
 };

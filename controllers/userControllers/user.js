@@ -179,3 +179,11 @@ export const forgotPasswordController = async (req, res) => {
     });
   }
 };
+
+export const getUserProfile = async (req, res) => {
+  return res.status(200).json({
+    success: false,
+    message: "User details find successfully",
+    user: req.user
+  })
+};
