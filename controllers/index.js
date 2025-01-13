@@ -2,6 +2,8 @@ import {
   verifyOtp,
   resendVerificationCode,
   registerUserController,
+  signInUserController,
+  forgotPasswordController
 } from "./userControllers/user.js";
 
 import { User } from "../models/index.js";
@@ -12,5 +14,7 @@ export {
     resendVerificationCode,
     registerUserController,
     sendVerificationcode,
+    signInUserController,
+    forgotPasswordController,
     User
 }
