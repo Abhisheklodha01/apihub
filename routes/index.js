@@ -1,37 +1,13 @@
-import mongoose from 'mongoose'
+import {
+  verifyOtp,
+  resendVerificationCode,
+  registerUserController,
+} from "../controllers/index.js";
+import userRouter from './userRoutes/user.route.js'
 
-const userSchema = new mongoose.Schema({
-
-  username: {
-    type: String,
-    required: true,
-    unique: true
-  },
-
-  email: {
-    type: String,
-    required: true,
-    unique: true
-  },
-
-  name: {
-    type: String,
-    required: true,
-  },
-
-  PhoneNumber: {
-    type: Number,
-    required: true,
-    unique: true
-  },
-
-  AccessToken: {
-    type: String,
-    required: true,
-    unique: true
-  },
-
-}, {timestamps: true})
-
-const User = mongoose.model("User", userSchema)
-export default User
+export {
+  verifyOtp,
+  resendVerificationCode,
+  registerUserController,
+  userRouter
+}

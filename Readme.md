@@ -1,4 +1,4 @@
-Started a opernsource apihub project that various types of apis for developers as well beginners that wants to start his journy in web development  
+Started a opernsource apihub project that provides various types of apis for developers as well for beginners that wants to start his journey in web development  
 
 step 1:
 git clone <url>
