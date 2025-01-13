@@ -1,16 +1,19 @@
-import express from 'express'
-import connectWithMongoDB from './db/index.js'
+import express from "express";
+import connectWithMongoDB from "./db/index.js";
+import { todoRouter, userRouter } from "./routes/index.js";
 
+const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-const app = express()
-app.use(express.json())
-app.use(express.urlencoded({extended: false}))
-
-connectWithMongoDB()
+connectWithMongoDB();
 
 app.get("/", (req, res) => {
-    return res.send("Workingfine")
-})
+  return res.send("Working fine");
+});
+
+app.use("/api/v1/users", userRouter)
+app.use('/api/v1/todo',todoRouter)
 
 
-export default app
+export default app;
