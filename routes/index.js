@@ -3,7 +3,7 @@ import {
   resendVerificationCode,
   registerUserController,
   signInUserController,
-  forgotPasswordController
+  forgotPasswordController,
   todo,
   getTodo
 } from "../controllers/index.js";

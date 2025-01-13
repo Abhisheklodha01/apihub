@@ -17,7 +17,7 @@ export {
     sendVerificationcode,
     signInUserController,
     forgotPasswordController,
-    User
+    User,
     todo,
     getTodo,
 }
