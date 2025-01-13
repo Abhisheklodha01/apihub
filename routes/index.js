@@ -7,10 +7,13 @@ import {
   addTodo,
   getTodos,
   getTodoById,
-  getUserProfile
+  getUserProfile,
+  uploadImageController,
 } from "../controllers/index.js";
-import userRouter from './userRoutes/user.route.js'
-import todoRouter from './todoRoutes/todo.route.js'
+import userRouter from "./userRoutes/user.route.js";
+import todoRouter from "./todoRoutes/todo.route.js";
+import { uploadImageMiddleware } from "../middlewares/cloudinary.js";
+import imageRouter from './imageRoutes/image.js'
 export {
   verifyOtp,
   resendVerificationCode,
@@ -22,5 +25,8 @@ export {
   todoRouter,
   getTodos,
   getTodoById,
-  getUserProfile
-}
+  getUserProfile,
+  uploadImageController,
+  uploadImageMiddleware,
+  imageRouter
+};
