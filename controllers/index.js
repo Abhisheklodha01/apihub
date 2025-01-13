@@ -8,6 +8,7 @@ import {
 
 import { User } from "../models/index.js";
 import {sendVerificationcode} from '../email/index.js'
+import { todo,getTodo } from "./todoControllers/todo.js";
 
 export {
     verifyOtp,
@@ -17,4 +18,6 @@ export {
     signInUserController,
     forgotPasswordController,
     User
+    todo,
+    getTodo,
 }

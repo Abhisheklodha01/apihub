@@ -1,6 +1,6 @@
 import express from "express";
 import connectWithMongoDB from "./db/index.js";
-import { userRouter } from "./routes/index.js";
+import { todoRouter, userRouter } from "./routes/index.js";
 
 const app = express();
 app.use(express.json());
@@ -13,5 +13,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/v1/users", userRouter)
+app.use('/api/v1/todo',todoRouter)
+
 
 export default app;
