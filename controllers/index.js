@@ -8,7 +8,7 @@ import {
 
 import { User } from "../models/index.js";
 import { sendVerificationcode } from "../email/index.js";
-import { addTodo, getTodos } from "./todoControllers/todo.js";
+import { addTodo, getTodos, getTodoById } from "./todoControllers/todo.js";
 
 export {
   verifyOtp,
@@ -20,4 +20,5 @@ export {
   User,
   addTodo,
   getTodos,
+  getTodoById,
 };
