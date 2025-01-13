@@ -18,6 +18,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.9.4",
     "nodemailer": "^6.9.16",
+    "nodemon": "^3.1.9",
     "prisma": "^6.2.1"
   }
 }
