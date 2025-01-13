@@ -3,21 +3,21 @@ import {
   resendVerificationCode,
   registerUserController,
   signInUserController,
-  forgotPasswordController
+  forgotPasswordController,
 } from "./userControllers/user.js";
 
 import { User } from "../models/index.js";
-import {sendVerificationcode} from '../email/index.js'
-import { todo,getTodo } from "./todoControllers/todo.js";
+import { sendVerificationcode } from "../email/index.js";
+import { addTodo, getTodos } from "./todoControllers/todo.js";
 
 export {
-    verifyOtp,
-    resendVerificationCode,
-    registerUserController,
-    sendVerificationcode,
-    signInUserController,
-    forgotPasswordController,
-    User,
-    todo,
-    getTodo,
-}
+  verifyOtp,
+  resendVerificationCode,
+  registerUserController,
+  sendVerificationcode,
+  signInUserController,
+  forgotPasswordController,
+  User,
+  addTodo,
+  getTodos,
+};
