@@ -2,6 +2,8 @@ import {
   verifyOtp,
   resendVerificationCode,
   registerUserController,
+  signInUserController,
+  forgotPasswordController
   todo,
   getTodo
 } from "../controllers/index.js";
@@ -11,6 +13,9 @@ export {
   verifyOtp,
   resendVerificationCode,
   registerUserController,
+  signInUserController,
+  forgotPasswordController,
+  userRouter,
   userRouter,
   todo,
   todoRouter,

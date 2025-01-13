@@ -27,7 +27,7 @@ export const registerUserController = async (req, res) => {
     }
 
     const exitsedUser = await User.find({ email: email });
-    const verifyExistedUser = exitsedUser ? exitsedUser._id : undefined
+    const verifyExistedUser = exitsedUser ? exitsedUser._id : undefined;
     if (verifyExistedUser != undefined) {
       return res.status(400).json({
         success: false,
@@ -48,11 +48,12 @@ export const registerUserController = async (req, res) => {
       accessToken,
       otp,
     });
-
+    const auth_token = jwt.sign({ id: user._id }, JWT_SECRET_KEY);
     return res.status(201).json({
       success: true,
       message: "Successfully register to ApiHub",
       user,
+      auth_token,
     });
   } catch (error) {
     return res.status(500).json({
@@ -64,50 +65,117 @@ export const registerUserController = async (req, res) => {
 };
 
 export const verifyOtp = async (req, res) => {
-  const { verificationCode, id } = req.body;
+  const { verificationCode, email } = req.body;
   try {
-    const user = await User.findById(id);
+    const user = await User.findOne({ email: email });
     if (verificationCode != user.otp) {
       return res.status(400).json({
         success: false,
         message: "Invalid Otp",
       });
     }
-    const updatedUser = await User.findByIdAndUpdate(id, {
-      isVerified: true,
-    });
-
+    user.isVerified = true;
+    await user.save();
     return res.status(201).json({
       success: true,
       message: "Email verified successfully",
-      user: updatedUser
+      user,
     });
   } catch (error) {
     return res.status(500).json({
       success: false,
       message: "server error unable to verify otp",
-      error
+      error,
     });
   }
 };
 
 export const resendVerificationCode = async (req, res) => {
-  const { email, id } = req.body;
+  const { email } = req.body;
   try {
     const otp = generateOTP(6);
-    await User.findByIdAndUpdate(id, {
-      otp: otp,
-    });
-
+    const user = await User.findOne({ email: email });
+    user.otp = otp;
+    await user.save();
     await sendVerificationcode(email, otp);
     return res.status(201).json({
       success: true,
       message: "Verification Code Send Successfully",
+      user,
     });
   } catch (error) {
     return res.status(500).json({
       success: false,
       message: "Serever error unable to send Verification Code",
+    });
+  }
+};
+
+export const signInUserController = async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    if (!email || !password) {
+      return res.status(400).json({
+        success: false,
+        message: "All fields are required",
+      });
+    }
+
+    const exitsedUser = await User.find({ email: email });
+    if (!exitsedUser) {
+      return res.status(400).json({
+        success: false,
+        message: "Email does not exists please register first",
+      });
+    }
+    const isPasswordValid = await bcryptjs.compare(
+      password,
+      exitsedUser.password
+    );
+    if (!isPasswordValid) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid Password",
+      });
+    }
+    const auth_token = jwt.sign({ id: exitsedUser._id }, JWT_SECRET_KEY);
+    return res.status(201).json({
+      success: true,
+      message: "Successfully Signin to ApiHub",
+      user: exitsedUser,
+      auth_token,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Server issue please try again after some time",
+      error,
+    });
+  }
+};
+
+export const forgotPasswordController = async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const user = await User.findOne({ email: email });
+    if (!user) {
+      return res.status(400).json({
+        success: false,
+        message: "Email does not exists please register first",
+      });
+    }
+    const hashedPassword = await bcryptjs.hash(password, 20);
+    user.password = hashedPassword;
+    await user.save();
+    return res.status(201).json({
+      success: true,
+      message: "Password changed successfully",
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Server issue please try again after some time",
+      error,
     });
   }
 };
