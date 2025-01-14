@@ -1,11 +1,14 @@
-import express from 'express'
-import { getTodos, addTodo, getTodoById } from '../index.js'
+import express from "express";
+import {
+  getTodosController,
+  addTodoController,
+  getTodoByIdController,
+} from "../index.js";
 
-const router = express.Router()
+const router = express.Router();
 
-router.post("/add-todo", addTodo)
-router.get('/get-todo', getTodos)
-router.get("/get-todo/:todoId", getTodoById)
+router.post("/add-todo", addTodoController);
+router.get("/get-todo", getTodosController);
+router.get("/get-todo/:todoId", getTodoByIdController);
 
-
-export default router
+export default router;

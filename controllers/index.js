@@ -4,13 +4,21 @@ import {
   registerUserController,
   signInUserController,
   forgotPasswordController,
-  getUserProfile,
+  getUserProfileController,
 } from "./userControllers/user.js";
 
 import { User } from "../models/index.js";
 import { sendVerificationcode } from "../email/index.js";
-import { addTodo, getTodos, getTodoById } from "./todoControllers/todo.js";
-import { uploadImageController } from "./imageControllers/image.js";
+import {
+  addTodoController,
+  getTodosController,
+  getTodoByIdController,
+} from "./todoControllers/todo.js";
+import {
+  uploadImageController,
+  getImagesController,
+  getImageByIdController,
+} from "./imageControllers/image.js";
 
 export {
   verifyOtp,
@@ -20,9 +28,11 @@ export {
   signInUserController,
   forgotPasswordController,
   User,
-  addTodo,
-  getTodos,
-  getTodoById,
-  getUserProfile,
-  uploadImageController
+  addTodoController,
+  getTodosController,
+  getTodoByIdController,
+  getUserProfileController,
+  uploadImageController,
+  getImageByIdController,
+  getImagesController,
 };

@@ -1,5 +1,10 @@
 import express from "express";
-import { uploadImageController, uploadImageMiddleware } from "../index.js";
+import {
+  getImageByIdController,
+  getImagesController,
+  uploadImageController,
+  uploadImageMiddleware,
+} from "../index.js";
 
 const router = express.Router();
 
@@ -10,4 +15,7 @@ router.post(
   uploadImageController
 );
 
-export default router
+router.get("/get-images", getImagesController);
+router.get("/get-images/:imageId", getImageByIdController);
+
+export default router;

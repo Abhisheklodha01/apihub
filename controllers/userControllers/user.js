@@ -180,9 +180,9 @@ export const forgotPasswordController = async (req, res) => {
   }
 };
 
-export const getUserProfile = async (req, res) => {
+export const getUserProfileController = async (req, res) => {
   return res.status(200).json({
-    success: false,
+    success: true,
     message: "User details find successfully",
     user: req.user
   })
