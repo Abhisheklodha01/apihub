@@ -2,7 +2,7 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-export const addTodo = async (req, res) => {
+export const addTodoController = async (req, res) => {
   try {
     const { name, description } = await req.body;
     if (!name || !description) {
@@ -30,11 +30,12 @@ export const addTodo = async (req, res) => {
   }
 };
 
-export const getTodos = async (req, res) => {
+export const getTodosController = async (req, res) => {
   try {
     const todos = await prisma.todo.findMany();
     return res.status(200).json({
       success: true,
+      message: "Todos find successfully",
       todos,
     });
   } catch (err) {
@@ -45,8 +46,8 @@ export const getTodos = async (req, res) => {
   }
 };
 
-export const getTodoById = async (req, res) => {
-  const { todoId } = req.body;
+export const getTodoByIdController = async (req, res) => {
+  const todoId = req.params.todoId;
   try {
     const todo = await prisma.todo.findUnique({
       where: {
