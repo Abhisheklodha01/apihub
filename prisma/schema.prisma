@@ -28,3 +28,13 @@ model Cat {
   imageUrl    String
   description String
 }
+
+
+model Dog {
+  id          Int     @id @default(autoincrement())
+  name        String
+  breed       String
+  location    String
+  imageUrl    String
+  description String
+}

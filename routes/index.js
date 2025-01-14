@@ -12,7 +12,10 @@ import {
   getImageByIdController,
   getImagesController,
   uploadCatController,
-  getAllCatsController
+  getAllCatsController,
+  addDogsController,
+  getDogsController,
+  getDogByIdController
 } from "../controllers/index.js";
 import { uploadImageMiddleware } from "../middlewares/cloudinary.js";
 import {isAuthenticated} from '../middlewares/auth.js'
@@ -33,17 +36,22 @@ export {
   getImagesController,
   isAuthenticated,
   uploadCatController,
-  getAllCatsController
+  getAllCatsController,
+  addDogsController,
+  getDogsController,
+  getDogByIdController
 };
 
 import userRouter from "./userRoutes/user.route.js";
 import todoRouter from "./todoRoutes/todo.route.js";
-import imageRouter from './imageRoutes/image.js'
+import imageRouter from './imageRoutes/image.route.js'
 import catRouter from './catRouters/cat.route.js'
+import dogRouter from './dogRoutes/dog.route.js'
 
 export {
   userRouter,
   todoRouter,
   imageRouter,
-  catRouter
+  catRouter,
+  dogRouter
 }

@@ -20,11 +20,16 @@ import {
   getImageByIdController,
 } from "./imageControllers/image.js";
 
+import {
+  uploadCatController,
+  getAllCatsController,
+} from "./catControllers/cat.js";
 
-import {uploadCatController,getAllCatsController} from './catControllers/cat.js'
-
-
-
+import {
+  addDogsController,
+  getDogByIdController,
+  getDogsController,
+} from "./dogControllers/dog.js";
 
 export {
   verifyOtp,
@@ -42,5 +47,8 @@ export {
   getImageByIdController,
   getImagesController,
   uploadCatController,
-  getAllCatsController
+  getAllCatsController,
+  addDogsController,
+  getDogByIdController,
+  getDogsController,
 };
