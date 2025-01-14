@@ -20,6 +20,12 @@ import {
   getImageByIdController,
 } from "./imageControllers/image.js";
 
+
+import {uploadCatController,getAllCatsController} from './catControllers/cat.js'
+
+
+
+
 export {
   verifyOtp,
   resendVerificationCode,
@@ -35,4 +41,6 @@ export {
   uploadImageController,
   getImageByIdController,
   getImagesController,
+  uploadCatController,
+  getAllCatsController
 };

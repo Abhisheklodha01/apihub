@@ -19,3 +19,12 @@ model Todo {
   name        String
   description String?
 }
+
+model Cat {
+  id          Int     @id @default(autoincrement())
+  name        String
+  breed       String
+  location    String
+  imageUrl    String
+  description String
+}
