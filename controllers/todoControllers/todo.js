@@ -1,6 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient();
+const prisma = new PrismaClient({});
 
 export const addTodoController = async (req, res) => {
   try {
@@ -25,7 +25,7 @@ export const addTodoController = async (req, res) => {
   } catch (err) {
     return res.status(500).json({
       success: false,
-      message: "Failed to create todo",
+      message: "Server error failed to create todo",
     });
   }
 };
