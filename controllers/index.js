@@ -23,6 +23,7 @@ import {
 import {
   uploadCatController,
   getAllCatsController,
+  getCatByIdController
 } from "./catControllers/cat.js";
 
 import {
@@ -30,6 +31,12 @@ import {
   getDogByIdController,
   getDogsController,
 } from "./dogControllers/dog.js";
+
+import {
+  addvideoController,
+  getVideosController,
+  getVideoByIdController,
+} from "./instaReels/reels.js";
 
 export {
   verifyOtp,
@@ -51,4 +58,8 @@ export {
   addDogsController,
   getDogByIdController,
   getDogsController,
+  addvideoController,
+  getVideosController,
+  getVideoByIdController,
+  getCatByIdController
 };

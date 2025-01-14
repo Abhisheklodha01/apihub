@@ -15,10 +15,15 @@ import {
   getAllCatsController,
   addDogsController,
   getDogsController,
-  getDogByIdController
+  getDogByIdController,
+  addvideoController,
+  getVideosController,
+  getVideoByIdController,
+  getCatByIdController
 } from "../controllers/index.js";
 import { uploadImageMiddleware } from "../middlewares/cloudinary.js";
 import {isAuthenticated} from '../middlewares/auth.js'
+import { uploadVideoMiddleware, upload } from "../middlewares/imageKit.js";
 
 export {
   verifyOtp,
@@ -39,7 +44,13 @@ export {
   getAllCatsController,
   addDogsController,
   getDogsController,
-  getDogByIdController
+  getDogByIdController,
+  uploadVideoMiddleware,
+  upload,
+  addvideoController,
+  getVideosController,
+  getVideoByIdController,
+  getCatByIdController
 };
 
 import userRouter from "./userRoutes/user.route.js";
@@ -47,11 +58,13 @@ import todoRouter from "./todoRoutes/todo.route.js";
 import imageRouter from './imageRoutes/image.route.js'
 import catRouter from './catRouters/cat.route.js'
 import dogRouter from './dogRoutes/dog.route.js'
+import reelsRouter from './reelsRoutes/reels.route.js'
 
 export {
   userRouter,
   todoRouter,
   imageRouter,
   catRouter,
-  dogRouter
+  dogRouter,
+  reelsRouter
 }
