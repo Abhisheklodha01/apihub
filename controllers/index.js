@@ -20,11 +20,23 @@ import {
   getImageByIdController,
 } from "./imageControllers/image.js";
 
+import {
+  uploadCatController,
+  getAllCatsController,
+  getCatByIdController
+} from "./catControllers/cat.js";
 
-import {uploadCatController,getAllCatsController} from './catControllers/cat.js'
+import {
+  addDogsController,
+  getDogByIdController,
+  getDogsController,
+} from "./dogControllers/dog.js";
 
-
-
+import {
+  addvideoController,
+  getVideosController,
+  getVideoByIdController,
+} from "./instaReels/reels.js";
 
 export {
   verifyOtp,
@@ -42,5 +54,12 @@ export {
   getImageByIdController,
   getImagesController,
   uploadCatController,
-  getAllCatsController
+  getAllCatsController,
+  addDogsController,
+  getDogByIdController,
+  getDogsController,
+  addvideoController,
+  getVideosController,
+  getVideoByIdController,
+  getCatByIdController
 };

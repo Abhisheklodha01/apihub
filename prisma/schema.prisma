@@ -28,3 +28,22 @@ model Cat {
   imageUrl    String
   description String
 }
+
+
+model Dog {
+  id          Int     @id @default(autoincrement())
+  name        String
+  breed       String
+  location    String
+  imageUrl    String
+  description String
+}
+
+model InstaReels {
+  id Int @id @default(autoincrement())
+  title String
+  description String
+  url String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
