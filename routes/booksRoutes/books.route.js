@@ -2,7 +2,8 @@ import express from "express";
 import {
   addBookController,
   getBooksController,
-  getBookByIdController
+  getBookByIdController,
+  uploadImageMiddleware
 } from "../index.js";
 
 const router = express.Router();
