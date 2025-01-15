@@ -36,7 +36,11 @@ export const uploadCatController = async (req, res) => {
 
 export const getAllCatsController = async (req, res) => {
   try {
-    const cats = await prisma.cat.findMany();
+    const cats = await prisma.cat.findMany({
+      orderBy: {
+        id: 'desc'
+      }
+    });
     return res.status(200).json({
       success: true,
       message: "Cats fetched successfully",

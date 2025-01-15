@@ -37,7 +37,11 @@ export const uploadImageController = async (req, res) => {
 
 export const getImagesController = async (req, res) => {
     try {
-        const images = await prisma.image.findMany()
+        const images = await prisma.image.findMany({
+            orderBy: {
+                id: 'desc'
+            }
+        })
         return res.status(200).json({
             success: true,
             message: "Images find successfully",

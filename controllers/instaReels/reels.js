@@ -29,7 +29,11 @@ export const addvideoController = async (req, res) => {
 
 export const getVideosController = async (req, res) => {
     try {
-        const videos = await prisma.instaReels.findMany()
+        const videos = await prisma.instaReels.findMany({
+            orderBy: {
+                createdAt: 'desc'
+            }
+        })
         return res.status(200).json({
             success: true,
             message: "Videos fetched successfully",
