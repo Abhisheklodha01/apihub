@@ -50,6 +50,12 @@ import {
   getBookByIdController,
 } from "./booksControllers/books.js";
 
+import {
+  addMoviesController,
+  getMoviesController,
+  getMovieByIdController,
+} from "./moviesControllers/movies.js";
+
 export {
   verifyOtp,
   resendVerificationCode,
@@ -79,5 +85,8 @@ export {
   getYoutubeVideoByIdController,
   addBookController,
   getBooksController,
-  getBookByIdController
+  getBookByIdController,
+  addMoviesController,
+  getMoviesController,
+  getMovieByIdController,
 };
