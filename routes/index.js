@@ -22,8 +22,12 @@ import {
   getCatByIdController,
   uploadYoutubeVideoController,
   getYoutubeVideoByIdController,
-  getYoutubeVideosController
+  getYoutubeVideosController,
+  addBookController,
+  getBooksController,
+  getBookByIdController
 } from "../controllers/index.js";
+
 import { uploadImageMiddleware } from "../middlewares/cloudinary.js";
 import {isAuthenticated} from '../middlewares/auth.js'
 import { uploadVideoMiddleware, upload } from "../middlewares/imageKit.js";
@@ -57,6 +61,9 @@ export {
   uploadYoutubeVideoController,
   getYoutubeVideosController,
   getYoutubeVideoByIdController,
+  addBookController,
+  getBooksController,
+  getBookByIdController
 };
 
 import userRouter from "./userRoutes/user.route.js";
@@ -66,6 +73,8 @@ import catRouter from './catRouters/cat.route.js'
 import dogRouter from './dogRoutes/dog.route.js'
 import reelsRouter from './reelsRoutes/reels.route.js'
 import youtubeVideoRouter from './youtubeVideoRoutes/youtube.route.js'
+import booksRouter from './booksRoutes/books.route.js'
+
 export {
   userRouter,
   todoRouter,
@@ -73,5 +82,6 @@ export {
   catRouter,
   dogRouter,
   reelsRouter,
-  youtubeVideoRouter
+  youtubeVideoRouter,
+  booksRouter
 }

@@ -30,7 +30,11 @@ export const addDogsController = async (req, res) => {
 
 export const getDogsController = async (req, res) => {
     try {
-        const dogs = await prisma.dog.findMany()
+        const dogs = await prisma.dog.findMany({
+            orderBy: {
+                id: 'desc'
+            }
+        })
         return res.status(200).json({
             success: true,
             message: "Dogs fetched successfully",

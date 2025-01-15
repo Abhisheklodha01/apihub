@@ -2,29 +2,31 @@ import {PrismaClient} from '@prisma/client'
 
 const prisma = new PrismaClient({})
 
-export const uploadImageController = async (req, res) => {
-    const {name, description} = req.body
+export const addBookController = async (req, res) => {
+    const {title, description, author} = req.body
     const imageUrl = req.imageUrl
     try {
-        if (!name || !description) {
+        if (!title || !description || !author) {
             return res.status(400).json({
                 success: false,
-                message: "Image name and description required"
+                message: "title and description required"
             })
         }
         
-        const image = await prisma.image.create({
+        const book = await prisma.books.create({
             data: {
-                name: name,
-                description: description,
-                url: imageUrl
+                title,
+                author,
+                description,
+                imageUrl
+                
             }
         })
 
         return res.status(200).json({
             success: true,
-            message: "Image uploaded successfully",
-            image
+            message: "Book uploaded successfully",
+           book
         })
 
     } catch (error) {
@@ -35,17 +37,17 @@ export const uploadImageController = async (req, res) => {
     }
 }
 
-export const getImagesController = async (req, res) => {
+export const getBooksController = async (req, res) => {
     try {
-        const images = await prisma.image.findMany({
-            orderBy: {
-                id: 'desc'
-            }
+        const books = await prisma.books.findMany({
+           orderBy: {
+             createdAt: 'desc'
+           }
         })
         return res.status(200).json({
             success: true,
             message: "Images find successfully",
-            images
+            books
         })
     } catch (error) {
         return res.status(500).json({
@@ -55,18 +57,18 @@ export const getImagesController = async (req, res) => {
     }
 }
 
-export const getImageByIdController = async (req, res) => {
-    const imageId = req.params.imageId
+export const getBookByIdController = async (req, res) => {
+    const bookId = req.params.bookId
     try {
-        const image = await prisma.image.findUnique({
+        const book = await prisma.books.findUnique({
             where: {
-                id: Number(imageId)
+                id: Number(bookId)
             }
         })
         return res.status(200).json({
             success: true,
             message: "Image find successfully",
-            image
+            book
         })
     } catch (error) {
         return res.status(500).json({

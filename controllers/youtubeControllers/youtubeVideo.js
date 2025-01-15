@@ -31,7 +31,11 @@ export const uploadYoutubeVideoController = async(req,res) => {
 
 export const getYoutubeVideosController = async(req,res) => {
     try{
-        const videos = await prisma.youtubeVideo.findMany()
+        const videos = await prisma.youtubeVideo.findMany({
+            orderBy: {
+                createdAt: 'desc'
+            }
+        })
         return res.status(200).json({
             success: true,
             message: "Videos fetched successfully",

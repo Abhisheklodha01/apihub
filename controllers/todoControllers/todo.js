@@ -32,7 +32,11 @@ export const addTodoController = async (req, res) => {
 
 export const getTodosController = async (req, res) => {
   try {
-    const todos = await prisma.todo.findMany();
+    const todos = await prisma.todo.findMany({
+      orderBy: {
+        id: "desc",
+      },
+    });
     return res.status(200).json({
       success: true,
       message: "Todos find successfully",
