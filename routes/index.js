@@ -19,7 +19,10 @@ import {
   addvideoController,
   getVideosController,
   getVideoByIdController,
-  getCatByIdController
+  getCatByIdController,
+  uploadYoutubeVideoController,
+  getYoutubeVideoByIdController,
+  getYoutubeVideosController
 } from "../controllers/index.js";
 import { uploadImageMiddleware } from "../middlewares/cloudinary.js";
 import {isAuthenticated} from '../middlewares/auth.js'
@@ -50,7 +53,10 @@ export {
   addvideoController,
   getVideosController,
   getVideoByIdController,
-  getCatByIdController
+  getCatByIdController,
+  uploadYoutubeVideoController,
+  getYoutubeVideosController,
+  getYoutubeVideoByIdController,
 };
 
 import userRouter from "./userRoutes/user.route.js";
@@ -59,12 +65,13 @@ import imageRouter from './imageRoutes/image.route.js'
 import catRouter from './catRouters/cat.route.js'
 import dogRouter from './dogRoutes/dog.route.js'
 import reelsRouter from './reelsRoutes/reels.route.js'
-
+import youtubeVideoRouter from './youtubeVideoRoutes/youtube.route.js'
 export {
   userRouter,
   todoRouter,
   imageRouter,
   catRouter,
   dogRouter,
-  reelsRouter
+  reelsRouter,
+  youtubeVideoRouter
 }

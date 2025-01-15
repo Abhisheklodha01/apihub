@@ -7,6 +7,7 @@ import {
   catRouter,
   dogRouter,
   reelsRouter,
+  youtubeVideoRouter,
 } from "./routes/index.js";
 
 const app = express();
@@ -25,5 +26,6 @@ app.use("/api/v1/images", imageRouter);
 app.use("/api/v1/cats", catRouter);
 app.use("/api/v1/dogs", dogRouter);
 app.use("/api/v1/reels", reelsRouter)
+app.use("/api/v1/youtube",youtubeVideoRouter)
 
 export default app;

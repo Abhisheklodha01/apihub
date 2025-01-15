@@ -38,6 +38,11 @@ import {
   getVideoByIdController,
 } from "./instaReels/reels.js";
 
+import { 
+  uploadYoutubeVideoController,
+  getYoutubeVideosController,
+  getYoutubeVideoByIdController
+ } from "./youtubeControllers/youtubeVideo.js";
 export {
   verifyOtp,
   resendVerificationCode,
@@ -61,5 +66,8 @@ export {
   addvideoController,
   getVideosController,
   getVideoByIdController,
-  getCatByIdController
+  getCatByIdController,
+  uploadYoutubeVideoController,
+  getYoutubeVideosController,
+  getYoutubeVideoByIdController,
 };
