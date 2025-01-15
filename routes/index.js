@@ -25,7 +25,10 @@ import {
   getYoutubeVideosController,
   addBookController,
   getBooksController,
-  getBookByIdController
+  getBookByIdController,
+  addMoviesController,
+  getMoviesController,
+  getMovieByIdController,
 } from "../controllers/index.js";
 
 import { uploadImageMiddleware } from "../middlewares/cloudinary.js";
@@ -63,7 +66,10 @@ export {
   getYoutubeVideoByIdController,
   addBookController,
   getBooksController,
-  getBookByIdController
+  getBookByIdController,
+  addMoviesController,
+  getMoviesController,
+  getMovieByIdController,
 };
 
 import userRouter from "./userRoutes/user.route.js";
@@ -74,6 +80,7 @@ import dogRouter from './dogRoutes/dog.route.js'
 import reelsRouter from './reelsRoutes/reels.route.js'
 import youtubeVideoRouter from './youtubeVideoRoutes/youtube.route.js'
 import booksRouter from './booksRoutes/books.route.js'
+import moviesRouter from './moviesRoutes/movies.route.js'
 
 export {
   userRouter,
@@ -83,5 +90,6 @@ export {
   dogRouter,
   reelsRouter,
   youtubeVideoRouter,
-  booksRouter
+  booksRouter,
+  moviesRouter,
 }
