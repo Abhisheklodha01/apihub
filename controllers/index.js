@@ -23,7 +23,7 @@ import {
 import {
   uploadCatController,
   getAllCatsController,
-  getCatByIdController
+  getCatByIdController,
 } from "./catControllers/cat.js";
 
 import {
@@ -38,11 +38,18 @@ import {
   getVideoByIdController,
 } from "./instaReels/reels.js";
 
-import { 
+import {
   uploadYoutubeVideoController,
   getYoutubeVideosController,
-  getYoutubeVideoByIdController
- } from "./youtubeControllers/youtubeVideo.js";
+  getYoutubeVideoByIdController,
+} from "./youtubeControllers/youtubeVideo.js";
+
+import {
+  addBookController,
+  getBooksController,
+  getBookByIdController,
+} from "./booksControllers/books.js";
+
 export {
   verifyOtp,
   resendVerificationCode,
@@ -70,4 +77,7 @@ export {
   uploadYoutubeVideoController,
   getYoutubeVideosController,
   getYoutubeVideoByIdController,
+  addBookController,
+  getBooksController,
+  getBookByIdController
 };
