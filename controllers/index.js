@@ -13,71 +13,77 @@ import {
   addTodoController,
   getTodosController,
   getTodoByIdController,
-  getRandomTodoController
+  getRandomTodoController,
 } from "./todoControllers/todo.js";
 import {
   uploadImageController,
   getImagesController,
   getImageByIdController,
-  getRandomImageController
+  getRandomImageController,
 } from "./imageControllers/image.js";
 
 import {
   uploadCatController,
   getAllCatsController,
   getCatByIdController,
-  getRandomCatController
+  getRandomCatController,
 } from "./catControllers/cat.js";
 
 import {
   addDogsController,
   getDogByIdController,
   getDogsController,
-  getRandomDogController
+  getRandomDogController,
 } from "./dogControllers/dog.js";
 
 import {
   addvideoController,
   getVideosController,
   getVideoByIdController,
-  getRandomReelController
+  getRandomReelController,
 } from "./instaReels/reels.js";
 
 import {
   uploadYoutubeVideoController,
   getYoutubeVideosController,
   getYoutubeVideoByIdController,
-  getRandomYoutubeVideoController
+  getRandomYoutubeVideoController,
 } from "./youtubeControllers/youtubeVideo.js";
 
 import {
   addBookController,
   getBooksController,
   getBookByIdController,
-  getRandomBookController
+  getRandomBookController,
 } from "./booksControllers/books.js";
 
 import {
   addMoviesController,
   getMoviesController,
   getMovieByIdController,
-  getRandomMovieController
+  getRandomMovieController,
 } from "./moviesControllers/movies.js";
 
 import {
   addJokeController,
   getJokeByIdController,
   getJokesController,
-  getRandomJokeController
-} from "./jokesControllers/jokes.js"
+  getRandomJokeController,
+} from "./jokesControllers/jokes.js";
 
 import {
   addQuotesController,
   getQuotesController,
   getQuoteByIdController,
-  getRandomQuoteController
+  getRandomQuoteController,
+} from "./quotesController/quotes.js";
 
-} from './quotesController/quotes.js'
+import {
+  addRestaurantsController,
+  getRestaurantByIdController,
+  getRestaurantsController,
+  getRestaurationsByCityController,
+} from "./restaurantsControllers/restaurants.js";
 export {
   verifyOtp,
   resendVerificationCode,
@@ -127,5 +133,8 @@ export {
   getRandomReelController,
   getRandomTodoController,
   getRandomYoutubeVideoController,
-  
+  addRestaurantsController,
+  getRestaurantByIdController,
+  getRestaurantsController,
+  getRestaurationsByCityController,
 };

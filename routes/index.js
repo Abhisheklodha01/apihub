@@ -45,6 +45,10 @@ import {
   getRandomReelController,
   getRandomTodoController,
   getRandomYoutubeVideoController,
+  addRestaurantsController,
+  getRestaurantByIdController,
+  getRestaurantsController,
+  getRestaurationsByCityController,
 } from "../controllers/index.js";
 
 import { uploadImageMiddleware } from "../middlewares/cloudinary.js";
@@ -102,6 +106,10 @@ export {
   getRandomReelController,
   getRandomTodoController,
   getRandomYoutubeVideoController,
+  addRestaurantsController,
+  getRestaurantByIdController,
+  getRestaurantsController,
+  getRestaurationsByCityController,
 };
 
 import userRouter from "./userRoutes/user.route.js";
@@ -115,6 +123,7 @@ import booksRouter from "./booksRoutes/books.route.js";
 import moviesRouter from "./moviesRoutes/movies.route.js";
 import jokesRouter from "./jokesRoutes/jokes.route.js";
 import quotesRouter from "./quotesRoutes/quotes.route.js";
+import restaurantsRouter from "./restaurantsRoutes/restaurants.route.js";
 export {
   userRouter,
   todoRouter,
@@ -126,5 +135,6 @@ export {
   booksRouter,
   moviesRouter,
   jokesRouter,
-  quotesRouter
+  quotesRouter,
+  restaurantsRouter,
 };

@@ -11,7 +11,8 @@ import {
   booksRouter,
   moviesRouter,
   jokesRouter,
-  quotesRouter
+  quotesRouter,
+  restaurantsRouter
 } from "./routes/index.js";
 
 const app = express();
@@ -42,5 +43,6 @@ app.use("/api/v1/books", booksRouter);
 app.use("/api/v1/movies", moviesRouter);
 app.use("/api/v1/jokes", jokesRouter);
 app.use("/api/v1/quotes", quotesRouter);
+app.use("/api/v1/restaurants", restaurantsRouter);
 
 export default app;
