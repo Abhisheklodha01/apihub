@@ -22,7 +22,7 @@ CREATE TABLE "FoodNutritions" (
     "calories" INTEGER NOT NULL,
     "protein" INTEGER NOT NULL,
     "carbohydrates" INTEGER NOT NULL,
-    "fats" INTEGER NOT NULL,
+    "fat" INTEGER NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
 

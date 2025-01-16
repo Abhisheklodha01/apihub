@@ -45,10 +45,18 @@ import {
   getRandomReelController,
   getRandomTodoController,
   getRandomYoutubeVideoController,
+  addRestaurantsController,
+  getRestaurantByIdController,
+  getRestaurantsController,
+  getRestaurationsByCityController,
   getFoodNutritionByIdController,
   getFoodNutritionController,
   addFoodNutritionController,
-  getRandomFoodNutritionController
+  getRandomFoodNutritionController,
+  addHotelsController,
+  getHotelByIdController,
+  getHotelsController,
+  getHotelsByCityController,
 } from "../controllers/index.js";
 
 import { uploadImageMiddleware } from "../middlewares/cloudinary.js";
@@ -106,10 +114,18 @@ export {
   getRandomReelController,
   getRandomTodoController,
   getRandomYoutubeVideoController,
+  addRestaurantsController,
+  getRestaurantByIdController,
+  getRestaurantsController,
+  getRestaurationsByCityController,
   getFoodNutritionByIdController,
   getFoodNutritionController,
   addFoodNutritionController,
-  getRandomFoodNutritionController
+  getRandomFoodNutritionController,
+  addHotelsController,
+  getHotelByIdController,
+  getHotelsController,
+  getHotelsByCityController,
 };
 
 import userRouter from "./userRoutes/user.route.js";
@@ -123,7 +139,9 @@ import booksRouter from "./booksRoutes/books.route.js";
 import moviesRouter from "./moviesRoutes/movies.route.js";
 import jokesRouter from "./jokesRoutes/jokes.route.js";
 import quotesRouter from "./quotesRoutes/quotes.route.js";
+import restaurantsRouter from "./restaurantsRoutes/restaurants.route.js";
 import foodNutritionsRouter from "./foodNutritionRoutes/foodNutrition.route.js";
+import hotelsRouter from "./hotelRoutes/hotels.route.js"
 export {
   userRouter,
   todoRouter,
@@ -136,5 +154,7 @@ export {
   moviesRouter,
   jokesRouter,
   quotesRouter,
-  foodNutritionsRouter
+  restaurantsRouter,
+  foodNutritionsRouter,
+  hotelsRouter,
 };

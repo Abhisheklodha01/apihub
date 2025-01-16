@@ -3,38 +3,45 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient({});
 
 export const addFoodNutritionController = async (req, res) => {
-     const { food_name, servingSize, calories, protein, carbohydrates, fats } =
+  const { food_name, servingSize, calories, protein, carbohydrates, fats } =
     req.body;
-    try{
-        if (!food_name || !servingSize || !calories || !protein || !carbohydrates || !fats) {
-          return res.status(400).json({
-            success: false,
-            message: "All fields are required",
-          });
-        }
-        const food = await prisma.foodNutritions.create({
-          data: {
-            food_name,
-            servingSize,
-            calories,
-            protein,
-            carbohydrates,
-            fats,
-          },
-        });
-        return res.status(200).json({
-          success: true,
-          message: "Food and Nutrientation uploaded successfully",
-          food,
-        });
-    } catch (error){
-        return res.status(500).json({
-          success: false,
-          message: "Server error while uploading food and nutrientation",
-          error,
-        });
+  try {
+    if (
+      !food_name ||
+      !servingSize ||
+      !calories ||
+      !protein ||
+      !carbohydrates ||
+      !fats
+    ) {
+      return res.status(400).json({
+        success: false,
+        message: "All fields are required",
+      });
     }
-}
+    const food = await prisma.foodNutritions.create({
+      data: {
+        food_name,
+        servingSize,
+        calories,
+        protein,
+        carbohydrates,
+        fats,
+      },
+    });
+    return res.status(200).json({
+      success: true,
+      message: "Food and Nutrientation uploaded successfully",
+      food,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Server error while uploading food and nutrientation",
+      error,
+    });
+  }
+};
 
 export const getFoodNutritionController = async (req, res) => {
   try {
@@ -81,8 +88,8 @@ export const getFoodNutritionByIdController = async (req, res) => {
   }
 };
 
-export const getRandomFoodNutritionController = async(req,res) => {
-    try {
+export const getRandomFoodNutritionController = async (req, res) => {
+  try {
     const foods = await prisma.foodNutritions.findMany({
       orderBy: {
         createdAt: "desc",
@@ -102,5 +109,4 @@ export const getRandomFoodNutritionController = async(req,res) => {
       error,
     });
   }
-
-}
+};

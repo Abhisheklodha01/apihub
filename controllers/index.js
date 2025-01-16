@@ -77,12 +77,28 @@ import {
   getQuoteByIdController,
   getRandomQuoteController,
 } from "./quotesController/quotes.js";
+
+import {
+  addRestaurantsController,
+  getRestaurantByIdController,
+  getRestaurantsController,
+  getRestaurationsByCityController,
+} from "./restaurantsControllers/restaurants.js";
+
 import {
   getFoodNutritionByIdController,
   getFoodNutritionController,
   addFoodNutritionController,
-  getRandomFoodNutritionController
+  getRandomFoodNutritionController,
 } from "./foodNutritionControllers/foodNutrition.js";
+
+import {
+  addHotelsController,
+  getHotelByIdController,
+  getHotelsController,
+  getHotelsByCityController,
+} from "./hotelControllers/hotel.js";
+
 export {
   verifyOtp,
   resendVerificationCode,
@@ -132,8 +148,16 @@ export {
   getRandomReelController,
   getRandomTodoController,
   getRandomYoutubeVideoController,
+  addRestaurantsController,
+  getRestaurantByIdController,
+  getRestaurantsController,
+  getRestaurationsByCityController,
   getFoodNutritionByIdController,
   getFoodNutritionController,
   addFoodNutritionController,
-  getRandomFoodNutritionController
+  getRandomFoodNutritionController,
+  addHotelsController,
+  getHotelByIdController,
+  getHotelsController,
+  getHotelsByCityController,
 };
