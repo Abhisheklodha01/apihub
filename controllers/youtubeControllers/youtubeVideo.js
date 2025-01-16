@@ -75,7 +75,7 @@ export const getYoutubeVideoByIdController = async (req, res) => {
   }
 };
 
-export const getRandomVideoController = async (req, res) => {
+export const getRandomYoutubeVideoController = async (req, res) => {
   try {
     const videos = await prisma.quotes.findMany({
       orderBy: {

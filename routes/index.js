@@ -31,11 +31,24 @@ import {
   getMovieByIdController,
   addJokeController,
   getJokeByIdController,
-  getJokesController
+  getJokesController,
+  addQuotesController,
+  getQuoteByIdController,
+  getQuotesController,
+  getRandomBookController,
+  getRandomCatController,
+  getRandomDogController,
+  getRandomImageController,
+  getRandomJokeController,
+  getRandomMovieController,
+  getRandomQuoteController,
+  getRandomReelController,
+  getRandomTodoController,
+  getRandomYoutubeVideoController,
 } from "../controllers/index.js";
 
 import { uploadImageMiddleware } from "../middlewares/cloudinary.js";
-import {isAuthenticated} from '../middlewares/auth.js'
+import { isAuthenticated } from "../middlewares/auth.js";
 import { uploadVideoMiddleware, upload } from "../middlewares/imageKit.js";
 
 export {
@@ -75,19 +88,33 @@ export {
   getMovieByIdController,
   addJokeController,
   getJokeByIdController,
-  getJokesController
+  getJokesController,
+  addQuotesController,
+  getQuoteByIdController,
+  getQuotesController,
+  getRandomBookController,
+  getRandomCatController,
+  getRandomDogController,
+  getRandomImageController,
+  getRandomJokeController,
+  getRandomMovieController,
+  getRandomQuoteController,
+  getRandomReelController,
+  getRandomTodoController,
+  getRandomYoutubeVideoController,
 };
 
 import userRouter from "./userRoutes/user.route.js";
 import todoRouter from "./todoRoutes/todo.route.js";
-import imageRouter from './imageRoutes/image.route.js'
-import catRouter from './catRouters/cat.route.js'
-import dogRouter from './dogRoutes/dog.route.js'
-import reelsRouter from './reelsRoutes/reels.route.js'
-import youtubeVideoRouter from './youtubeVideoRoutes/youtube.route.js'
-import booksRouter from './booksRoutes/books.route.js'
-import moviesRouter from './moviesRoutes/movies.route.js'
-import jokesRouter from './jokesRoutes/jokes.route.js'
+import imageRouter from "./imageRoutes/image.route.js";
+import catRouter from "./catRouters/cat.route.js";
+import dogRouter from "./dogRoutes/dog.route.js";
+import reelsRouter from "./reelsRoutes/reels.route.js";
+import youtubeVideoRouter from "./youtubeVideoRoutes/youtube.route.js";
+import booksRouter from "./booksRoutes/books.route.js";
+import moviesRouter from "./moviesRoutes/movies.route.js";
+import jokesRouter from "./jokesRoutes/jokes.route.js";
+import quotesRouter from "./quotesRoutes/quotes.route.js";
 export {
   userRouter,
   todoRouter,
@@ -99,4 +126,5 @@ export {
   booksRouter,
   moviesRouter,
   jokesRouter,
-}
+  quotesRouter
+};
