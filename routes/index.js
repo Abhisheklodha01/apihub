@@ -63,6 +63,9 @@ import {
   addCountryController,
   getCountriesController,
   getCountryByIdController,
+  addFlowersController,
+  getAllFlowersController,
+  getFlowerByIdController,
 } from "../controllers/index.js";
 
 import { uploadImageMiddleware } from "../middlewares/cloudinary.js";
@@ -138,6 +141,9 @@ export {
   addCountryController,
   getCountriesController,
   getCountryByIdController,
+  addFlowersController,
+  getAllFlowersController,
+  getFlowerByIdController,
 };
 
 import userRouter from "./userRoutes/user.route.js";
@@ -156,6 +162,7 @@ import foodNutritionsRouter from "./foodNutritionRoutes/foodNutrition.route.js";
 import hotelsRouter from "./hotelRoutes/hotels.route.js"
 import programmingLanguagesRouter from "./pragrammingLanguagesRoutes/programming.route.js";
 import countriesRouter from "./countryRoutes/contries.route.js";
+import flowersRouter from "./flowerRoutes/flower.route.js"
 export {
   userRouter,
   todoRouter,
@@ -173,4 +180,5 @@ export {
   hotelsRouter,
   programmingLanguagesRouter,
   countriesRouter,
+  flowersRouter
 };
