@@ -141,3 +141,14 @@ model ProgrammingLanguage {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
+
+model Country {
+  id          Int      @id @default(autoincrement())
+  name        String
+  capital     String
+  population  Int
+  currency    String
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
