@@ -78,3 +78,22 @@ export const getTodoByIdController = async (req, res) => {
     });
   }
 };
+
+export const getRandomTodoController = async (req, res) => {
+  try {
+    const todos = await prisma.todo.findMany();
+    const randomIndex = Math.floor(Math.random() * todos.length);
+    const todo = todos[randomIndex];
+    return res.status(200).json({
+      success: true,
+      message: "Random todo fetched successfully",
+      todo,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Server error while fetching random todo",
+      error,
+    });
+  }
+};
