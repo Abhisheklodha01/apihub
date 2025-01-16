@@ -54,7 +54,7 @@ export const getFoodNutritionController = async (req, res) => {
 };
 
 export const getFoodNutritionByIdController = async (req, res) => {
-  const foodId = parseInt(req.params.foodId);
+  const foodId = parseInt(req.params.id);
   try {
     const food = await prisma.foodNutritions.findUnique({
       where: {
