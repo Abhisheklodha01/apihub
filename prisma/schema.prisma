@@ -86,3 +86,11 @@ model Jokes{
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model Quotes {
+  id Int @id @default(autoincrement())
+  author String
+  quote String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
