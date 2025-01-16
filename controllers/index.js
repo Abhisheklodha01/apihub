@@ -84,6 +84,21 @@ import {
   getRestaurantsController,
   getRestaurationsByCityController,
 } from "./restaurantsControllers/restaurants.js";
+
+import {
+  getFoodNutritionByIdController,
+  getFoodNutritionController,
+  addFoodNutritionController,
+  getRandomFoodNutritionController,
+} from "./foodNutritionControllers/foodNutrition.js";
+
+import {
+  addHotelsController,
+  getHotelByIdController,
+  getHotelsController,
+  getHotelsByCityController,
+} from "./hotelControllers/hotel.js";
+
 export {
   verifyOtp,
   resendVerificationCode,
@@ -137,4 +152,12 @@ export {
   getRestaurantByIdController,
   getRestaurantsController,
   getRestaurationsByCityController,
+  getFoodNutritionByIdController,
+  getFoodNutritionController,
+  addFoodNutritionController,
+  getRandomFoodNutritionController,
+  addHotelsController,
+  getHotelByIdController,
+  getHotelsController,
+  getHotelsByCityController,
 };

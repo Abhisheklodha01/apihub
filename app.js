@@ -12,7 +12,9 @@ import {
   moviesRouter,
   jokesRouter,
   quotesRouter,
-  restaurantsRouter
+  restaurantsRouter,
+  foodNutritionsRouter,
+  hotelsRouter,
 } from "./routes/index.js";
 
 const app = express();
@@ -28,9 +30,9 @@ app.get("/", (req, res) => {
 app.get("/health", (req, res) => {
   return res.status(200).json({
     success: true,
-    message: "Server health information is available"
-  })
-})
+    message: "Server health information is available",
+  });
+});
 
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/todos", todoRouter);
@@ -44,5 +46,7 @@ app.use("/api/v1/movies", moviesRouter);
 app.use("/api/v1/jokes", jokesRouter);
 app.use("/api/v1/quotes", quotesRouter);
 app.use("/api/v1/restaurants", restaurantsRouter);
+app.use("/api/v1/foodnutritions", foodNutritionsRouter);
+app.use("/api/v1/hotels", hotelsRouter);
 
 export default app;
