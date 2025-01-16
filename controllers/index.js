@@ -111,6 +111,12 @@ import {
   getCountryByIdController,
 } from "./countryControllers/country.js"
 
+import {
+  addFlowersController,
+  getAllFlowersController,
+  getFlowerByIdController
+} from "./flowersControllers/flowers.js"
+
 export {
   verifyOtp,
   resendVerificationCode,
@@ -178,4 +184,7 @@ export {
   addCountryController,
   getCountriesController,
   getCountryByIdController,
+  addFlowersController,
+  getAllFlowersController,
+  getFlowerByIdController,
 };
