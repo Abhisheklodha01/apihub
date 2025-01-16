@@ -105,6 +105,12 @@ import {
   getProgrammingLanguagesController,
 } from "./programmingLanguagesControllers/programming.js";
 
+import {
+  addCountryController,
+  getCountriesController,
+  getCountryByIdController,
+} from "./countryControllers/country.js"
+
 export {
   verifyOtp,
   resendVerificationCode,
@@ -169,4 +175,7 @@ export {
   addProgrammingLanguageController,
   getProgrammingLanguageByIdController,
   getProgrammingLanguagesController,
+  addCountryController,
+  getCountriesController,
+  getCountryByIdController,
 };
