@@ -15,7 +15,8 @@ import {
   restaurantsRouter,
   foodNutritionsRouter,
   hotelsRouter,
-  programmingLanguagesRouter
+  programmingLanguagesRouter,
+  countriesRouter
 } from "./routes/index.js";
 
 const app = express();
@@ -50,5 +51,6 @@ app.use("/api/v1/restaurants", restaurantsRouter);
 app.use("/api/v1/foodnutritions", foodNutritionsRouter);
 app.use("/api/v1/hotels", hotelsRouter);
 app.use("/api/v1/programming", programmingLanguagesRouter);
+app.use("/api/v1/countries", countriesRouter);
 
 export default app;
