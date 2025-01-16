@@ -130,3 +130,14 @@ model Hotels {
   createdAt      DateTime @default(now())
   updatedAt      DateTime
 }
+
+model ProgrammingLanguage {
+  id          Int      @id @default(autoincrement())
+  name        String
+  creator     String
+  year        Int
+  runtime     Int
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

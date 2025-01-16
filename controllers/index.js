@@ -99,6 +99,12 @@ import {
   getHotelsByCityController,
 } from "./hotelControllers/hotel.js";
 
+import {
+  addProgrammingLanguageController,
+  getProgrammingLanguageByIdController,
+  getProgrammingLanguagesController,
+} from "./programmingLanguagesControllers/programming.js";
+
 export {
   verifyOtp,
   resendVerificationCode,
@@ -160,4 +166,7 @@ export {
   getHotelByIdController,
   getHotelsController,
   getHotelsByCityController,
+  addProgrammingLanguageController,
+  getProgrammingLanguageByIdController,
+  getProgrammingLanguagesController,
 };
