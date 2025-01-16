@@ -57,6 +57,9 @@ import {
   getHotelByIdController,
   getHotelsController,
   getHotelsByCityController,
+  addProgrammingLanguageController,
+  getProgrammingLanguageByIdController,
+  getProgrammingLanguagesController,
 } from "../controllers/index.js";
 
 import { uploadImageMiddleware } from "../middlewares/cloudinary.js";
@@ -126,6 +129,9 @@ export {
   getHotelByIdController,
   getHotelsController,
   getHotelsByCityController,
+  addProgrammingLanguageController,
+  getProgrammingLanguageByIdController,
+  getProgrammingLanguagesController,
 };
 
 import userRouter from "./userRoutes/user.route.js";
@@ -142,6 +148,7 @@ import quotesRouter from "./quotesRoutes/quotes.route.js";
 import restaurantsRouter from "./restaurantsRoutes/restaurants.route.js";
 import foodNutritionsRouter from "./foodNutritionRoutes/foodNutrition.route.js";
 import hotelsRouter from "./hotelRoutes/hotels.route.js"
+import programmingLanguagesRouter from "./pragrammingLanguagesRoutes/programming.route.js";
 export {
   userRouter,
   todoRouter,
@@ -157,4 +164,5 @@ export {
   restaurantsRouter,
   foodNutritionsRouter,
   hotelsRouter,
+  programmingLanguagesRouter,
 };
