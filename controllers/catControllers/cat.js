@@ -38,8 +38,8 @@ export const getAllCatsController = async (req, res) => {
   try {
     const cats = await prisma.cat.findMany({
       orderBy: {
-        id: 'desc'
-      }
+        id: "desc",
+      },
     });
     return res.status(200).json({
       success: true,
@@ -62,7 +62,12 @@ export const getCatByIdController = async (req, res) => {
         id: Number(catId),
       },
     });
-
+    if (!cat) {
+      return res.status(404).json({
+        success: false,
+        message: "Cat not found",
+      });
+    }
     return res.status(200).json({
       success: true,
       message: "Cat fetched successfully",
@@ -72,6 +77,25 @@ export const getCatByIdController = async (req, res) => {
     return res.status(500).json({
       success: false,
       message: "Server failed to fetch cat",
+    });
+  }
+};
+
+export const getRandomCatController = async (req, res) => {
+  try {
+    const cats = await prisma.dog.findMany();
+    const randomIndex = Math.floor(Math.random() * cats.length);
+    const cat = cats[randomIndex];
+    return res.status(200).json({
+      success: true,
+      message: "Random cat fetched successfully",
+      cat,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Server error while fetching random cats",
+      error,
     });
   }
 };
