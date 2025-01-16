@@ -56,6 +56,11 @@ import {
   getMovieByIdController,
 } from "./moviesControllers/movies.js";
 
+import {
+  addJokeController,
+  getJokeByIdController,
+  getJokesController
+} from "./jokesControllers/jokes.js"
 export {
   verifyOtp,
   resendVerificationCode,
@@ -89,4 +94,7 @@ export {
   addMoviesController,
   getMoviesController,
   getMovieByIdController,
+  addJokeController,
+  getJokeByIdController,
+  getJokesController
 };

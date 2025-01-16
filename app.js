@@ -9,7 +9,8 @@ import {
   reelsRouter,
   youtubeVideoRouter,
   booksRouter,
-  moviesRouter
+  moviesRouter,
+  jokesRouter
 } from "./routes/index.js";
 
 const app = express();
@@ -31,5 +32,6 @@ app.use("/api/v1/reels", reelsRouter);
 app.use("/api/v1/youtube", youtubeVideoRouter);
 app.use("/api/v1/books", booksRouter);
 app.use("/api/v1/movies", moviesRouter);
+app.use("/api/v1/jokes", jokesRouter);
 
 export default app;

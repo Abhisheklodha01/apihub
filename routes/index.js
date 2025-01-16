@@ -29,6 +29,9 @@ import {
   addMoviesController,
   getMoviesController,
   getMovieByIdController,
+  addJokeController,
+  getJokeByIdController,
+  getJokesController
 } from "../controllers/index.js";
 
 import { uploadImageMiddleware } from "../middlewares/cloudinary.js";
@@ -70,6 +73,9 @@ export {
   addMoviesController,
   getMoviesController,
   getMovieByIdController,
+  addJokeController,
+  getJokeByIdController,
+  getJokesController
 };
 
 import userRouter from "./userRoutes/user.route.js";
@@ -81,7 +87,7 @@ import reelsRouter from './reelsRoutes/reels.route.js'
 import youtubeVideoRouter from './youtubeVideoRoutes/youtube.route.js'
 import booksRouter from './booksRoutes/books.route.js'
 import moviesRouter from './moviesRoutes/movies.route.js'
-
+import jokesRouter from './jokesRoutes/jokes.route.js'
 export {
   userRouter,
   todoRouter,
@@ -92,4 +98,5 @@ export {
   youtubeVideoRouter,
   booksRouter,
   moviesRouter,
+  jokesRouter,
 }
