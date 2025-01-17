@@ -2,21 +2,20 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-export const addFlowersController = async (req, res) => {
-  const { name, color, flowerType, description } = req.body;
+export const addPlantsController = async (req, res) => {
+  const { name, species, description } = req.body;
   const imageUrl = req.imageUrl;
   try {
-    if (!name || !color || !flowerType || !description) {
+    if (!name || !species || !description) {
       return res.status(400).json({
         success: false,
-        message: "Name, color, flower type, and description are required",
+        message: "Name, species, and description are required",
       });
     }
-    const flower = await prisma.flowers.create({
+    const plant = await prisma.plants.create({
       data: {
         name,
-        color,
-        flowerType,
+        species,
         description,
         imageUrl
       },
@@ -24,61 +23,61 @@ export const addFlowersController = async (req, res) => {
     return res.status(201).json({
       success: true,
       message: "Flower created successfully",
-      flower,
+      plant,
     });
   } catch (error) {
     return res.status(500).json({
       success: false,
-      message: "Server error while creating flower",
+      message: "Server error while creating plant",
       error,
     });
   }
 };
 
-export const getAllFlowersController = async (req, res) => {
+export const getAllPlantsController = async (req, res) => {
   try {
-    const flowers = await prisma.flowers.findMany({
+    const plants = await prisma.plants.findMany({
       orderBy: {
         id: "desc",
       },
     });
     return res.status(200).json({
       success: true,
-      message: "Flowers fetched successfully",
-      flowers,
+      message: "Plants fetched successfully",
+     plants,
     });
   } catch (error) {
     return res.status(500).json({
       success: false,
-      message: "Server error while fetching flowers",
+      message: "Server error while fetching plants",
       error,
     });
   }
 };
 
-export const getFlowerByIdController = async (req, res) => {
-  const flowerId = parseInt(req.params.flowerId);
+export const getPlantByIdController = async (req, res) => {
+  const plantId = parseInt(req.params.plantId);
   try {
-    const flower = await prisma.flowers.findUnique({
+    const plant = await prisma.plants.findUnique({
       where: {
-        id: flowerId,
+        id: plantId,
       },
     });
-    if (!flower) {
+    if (!plant) {
       return res.status(404).json({
         success: false,
-        message: "Flower not found",
+        message: "Plant not found",
       });
     }
     return res.status(200).json({
       success: true,
-      message: "Flower fetched successfully",
-      flower,
+      message: "Plant fetched successfully",
+      plant,
     });
   } catch (error) {
     return res.status(500).json({
       success: false,
-      message: "Server error while fetching flower",
+      message: "Server error while fetching Plant",
       error,
     });
   }
