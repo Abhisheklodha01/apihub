@@ -163,3 +163,15 @@ model Flowers {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
+
+model Cars {
+  id          Int      @id @default(autoincrement())
+  name       String
+  model      String
+  year        Int
+  mileage     Int
+  description String
+  imageUrl    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

@@ -109,13 +109,19 @@ import {
   addCountryController,
   getCountriesController,
   getCountryByIdController,
-} from "./countryControllers/country.js"
+} from "./countryControllers/country.js";
 
 import {
   addFlowersController,
   getAllFlowersController,
-  getFlowerByIdController
-} from "./flowersControllers/flowers.js"
+  getFlowerByIdController,
+} from "./flowersControllers/flowers.js";
+
+import {
+  addCarsController,
+  getAllCarsController,
+  getCarByIdController,
+} from "./carsControllers/cars.js";
 
 export {
   verifyOtp,
@@ -187,4 +193,7 @@ export {
   addFlowersController,
   getAllFlowersController,
   getFlowerByIdController,
+  addCarsController,
+  getAllCarsController,
+  getCarByIdController,
 };
