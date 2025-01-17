@@ -23,10 +23,10 @@ export const addFoodNutritionController = async (req, res) => {
       data: {
         food_name,
         servingSize,
-        calories,
-        protein,
-        carbohydrates,
-        fats,
+        calories: parseInt(calories),
+        protein: parseInt(protein),
+        carbohydrates: parseInt(carbohydrates),
+        fats: parseInt(fats),
       },
     });
     return res.status(200).json({
