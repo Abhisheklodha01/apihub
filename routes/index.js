@@ -69,6 +69,9 @@ import {
   addCarsController,
   getAllCarsController,
   getCarByIdController,
+  addPlantsController,
+  getAllPlantsController,
+  getPlantByIdController
 } from "../controllers/index.js";
 
 import { uploadImageMiddleware } from "../middlewares/cloudinary.js";
@@ -150,6 +153,9 @@ export {
   addCarsController,
   getAllCarsController,
   getCarByIdController,
+  addPlantsController,
+  getAllPlantsController,
+  getPlantByIdController
 };
 
 import userRouter from "./userRoutes/user.route.js";
@@ -170,6 +176,7 @@ import programmingLanguagesRouter from "./pragrammingLanguagesRoutes/programming
 import countriesRouter from "./countryRoutes/contries.route.js";
 import flowersRouter from "./flowerRoutes/flower.route.js"
 import carRouter from "./carRoutes/car.route.js"
+import plantsRouter from "./plantsRoutes/plant.route.js"
 export {
   userRouter,
   todoRouter,
@@ -189,4 +196,5 @@ export {
   countriesRouter,
   flowersRouter,
   carRouter,
+  plantsRouter
 };

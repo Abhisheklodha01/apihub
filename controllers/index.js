@@ -123,6 +123,12 @@ import {
   getCarByIdController,
 } from "./carsControllers/cars.js";
 
+import {
+  addPlantsController,
+  getAllPlantsController,
+  getPlantByIdController
+} from './plantsControllers/plants.js'
+
 export {
   verifyOtp,
   resendVerificationCode,
@@ -196,4 +202,7 @@ export {
   addCarsController,
   getAllCarsController,
   getCarByIdController,
+  addPlantsController,
+  getAllPlantsController,
+  getPlantByIdController
 };
