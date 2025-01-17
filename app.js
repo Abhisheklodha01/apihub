@@ -20,7 +20,8 @@ import {
   flowersRouter,
   carRouter,
   plantsRouter,
-  articlesRouter
+  articlesRouter,
+  productsRouter
 } from "./routes/index.js";
 
 const app = express();
@@ -60,4 +61,5 @@ app.use("/api/v1/flowers", flowersRouter);
 app.use("/api/v1/cars", carRouter);
 app.use("/api/v1/plants", plantsRouter);
 app.use("/api/v1/articles", articlesRouter)
+app.use("/api/v1/products", productsRouter)
 export default app;

@@ -126,16 +126,21 @@ import {
 import {
   addPlantsController,
   getAllPlantsController,
-  getPlantByIdController
-} from './plantsControllers/plants.js'
-import{
+  getPlantByIdController,
+} from "./plantsControllers/plants.js";
+import {
   addArticleController,
   getArticleByIdController,
   getArticlesController,
-  getRandomArticleController
+  getRandomArticleController,
 } from "./articlesControllers/articles.js";
 
-
+import {
+  addProductController,
+  getProductsController,
+  getProductByIdController,
+  getRandomProductController,
+} from "./productsControllers/products.js";
 export {
   verifyOtp,
   resendVerificationCode,
@@ -215,5 +220,9 @@ export {
   addArticleController,
   getArticleByIdController,
   getArticlesController,
-  getRandomArticleController
+  getRandomArticleController,
+  addProductController,
+  getProductsController,
+  getProductByIdController,
+  getRandomProductController,
 };
