@@ -128,6 +128,13 @@ import {
   getAllPlantsController,
   getPlantByIdController
 } from './plantsControllers/plants.js'
+import{
+  addArticleController,
+  getArticleByIdController,
+  getArticlesController,
+  getRandomArticleController
+} from "./articlesControllers/articles.js";
+
 
 export {
   verifyOtp,
@@ -204,5 +211,9 @@ export {
   getCarByIdController,
   addPlantsController,
   getAllPlantsController,
-  getPlantByIdController
+  getPlantByIdController,
+  addArticleController,
+  getArticleByIdController,
+  getArticlesController,
+  getRandomArticleController
 };
