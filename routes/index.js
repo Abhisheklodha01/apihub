@@ -71,7 +71,11 @@ import {
   getCarByIdController,
   addPlantsController,
   getAllPlantsController,
-  getPlantByIdController
+  getPlantByIdController,
+  addArticleController,
+  getArticleByIdController,
+  getArticlesController,
+  getRandomArticleController,
 } from "../controllers/index.js";
 
 import { uploadImageMiddleware } from "../middlewares/cloudinary.js";
@@ -155,7 +159,11 @@ export {
   getCarByIdController,
   addPlantsController,
   getAllPlantsController,
-  getPlantByIdController
+  getPlantByIdController,
+  addArticleController,
+  getArticleByIdController,
+  getArticlesController,
+  getRandomArticleController,
 };
 
 import userRouter from "./userRoutes/user.route.js";
@@ -171,12 +179,13 @@ import jokesRouter from "./jokesRoutes/jokes.route.js";
 import quotesRouter from "./quotesRoutes/quotes.route.js";
 import restaurantsRouter from "./restaurantsRoutes/restaurants.route.js";
 import foodNutritionsRouter from "./foodNutritionRoutes/foodNutrition.route.js";
-import hotelsRouter from "./hotelRoutes/hotels.route.js"
+import hotelsRouter from "./hotelRoutes/hotels.route.js";
 import programmingLanguagesRouter from "./pragrammingLanguagesRoutes/programming.route.js";
 import countriesRouter from "./countryRoutes/contries.route.js";
-import flowersRouter from "./flowerRoutes/flower.route.js"
-import carRouter from "./carRoutes/car.route.js"
-import plantsRouter from "./plantsRoutes/plant.route.js"
+import flowersRouter from "./flowerRoutes/flower.route.js";
+import carRouter from "./carRoutes/car.route.js";
+import plantsRouter from "./plantsRoutes/plant.route.js";
+import articlesRouter from "./articleRoutes/article.route.js";
 export {
   userRouter,
   todoRouter,
@@ -196,5 +205,6 @@ export {
   countriesRouter,
   flowersRouter,
   carRouter,
-  plantsRouter
+  plantsRouter,
+  articlesRouter,
 };
