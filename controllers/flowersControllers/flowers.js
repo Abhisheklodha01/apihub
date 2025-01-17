@@ -45,7 +45,7 @@ export const getAllFlowersController = async (req, res) => {
     return res.status(200).json({
       success: true,
       message: "Flowers fetched successfully",
-      data: flowers,
+      flowers,
     });
   } catch (error) {
     return res.status(500).json({
@@ -57,7 +57,7 @@ export const getAllFlowersController = async (req, res) => {
 };
 
 export const getFlowerByIdController = async (req, res) => {
-  const flowerId = parseInt(req.params.id);
+  const flowerId = parseInt(req.params.flowerId);
   try {
     const flower = await prisma.flowers.findUnique({
       where: {
