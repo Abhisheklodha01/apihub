@@ -76,6 +76,10 @@ import {
   getArticleByIdController,
   getArticlesController,
   getRandomArticleController,
+  addProductController,
+  getProductsController,
+  getProductByIdController,
+  getRandomProductController,
 } from "../controllers/index.js";
 
 import { uploadImageMiddleware } from "../middlewares/cloudinary.js";
@@ -164,6 +168,10 @@ export {
   getArticleByIdController,
   getArticlesController,
   getRandomArticleController,
+  addProductController,
+  getProductsController,
+  getProductByIdController,
+  getRandomProductController,
 };
 
 import userRouter from "./userRoutes/user.route.js";
@@ -186,6 +194,7 @@ import flowersRouter from "./flowerRoutes/flower.route.js";
 import carRouter from "./carRoutes/car.route.js";
 import plantsRouter from "./plantsRoutes/plant.route.js";
 import articlesRouter from "./articleRoutes/article.route.js";
+import productsRouter from "./productsRoutes/products.route.js";
 export {
   userRouter,
   todoRouter,
@@ -207,4 +216,5 @@ export {
   carRouter,
   plantsRouter,
   articlesRouter,
+  productsRouter,
 };

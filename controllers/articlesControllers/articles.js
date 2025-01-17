@@ -58,6 +58,12 @@ export const getArticleByIdController = async (req, res) => {
         id: articleId,
       },
     });
+    if(!data){
+      return res.status(404).json({
+        success: false,
+        message: "Article not found",
+      });
+    }
     return res.status(200).json({
       success: true,
       message: "Article fetched successfully",
