@@ -17,7 +17,8 @@ import {
   hotelsRouter,
   programmingLanguagesRouter,
   countriesRouter,
-  flowersRouter
+  flowersRouter,
+  carRouter
 } from "./routes/index.js";
 
 const app = express();
@@ -54,5 +55,6 @@ app.use("/api/v1/hotels", hotelsRouter);
 app.use("/api/v1/programming", programmingLanguagesRouter);
 app.use("/api/v1/countries", countriesRouter);
 app.use("/api/v1/flowers", flowersRouter);
+app.use("/api/v1/cars", carRouter);
 
 export default app;
