@@ -3,10 +3,10 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient({});
 
 export const addMoviesController = async (req, res) => {
-  const { title, description, director, realeDate } = req.body;
+  const { title, description, director, realeseDate } = req.body;
   const poster = req.imageUrl;
   try {
-    if (!title || !description || !director || !realeDate) {
+    if (!title || !description || !director || !realeseDate) {
       return res.status(400).json({
         success: false,
         message: "All fields are required",
@@ -18,7 +18,7 @@ export const addMoviesController = async (req, res) => {
         title,
         description,
         director,
-        realeDate,
+        realeseDate,
         poster,
       },
     });
