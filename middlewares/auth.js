@@ -13,15 +13,14 @@ export const isAuthenticated = async (req, res, next) => {
     });
   }
   try {
-    const decodedToken = jwt.verify(token, process.env.JWT_KEY);
+    const decodedToken = jwt.verify(token, process.env.JWT_SECRET_KEY);
     if (!decodedToken) {
       return res.status(401).json({
         success: false,
         message: "Invalid Token",
       });
     }
-    const user = await User.findById(decodedToken._id).select("-password");
-
+    const user = await User.findById(decodedToken.id).select("-password");
     if (!user) {
       return res.status(401).json({
         success: false,
@@ -32,6 +31,7 @@ export const isAuthenticated = async (req, res, next) => {
     req.user = user;
     next();
   } catch (error) {
+    console.log(error);
     return res.status(500).json({
       success: false,
       message: "Server error unable to verify user",

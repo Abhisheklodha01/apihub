@@ -56,6 +56,8 @@ export const registerUserController = async (req, res) => {
       auth_token,
     });
   } catch (error) {
+    console.log(error);
+    
     return res.status(500).json({
       success: false,
       message: "Server issue please try again after some time",
@@ -66,8 +68,10 @@ export const registerUserController = async (req, res) => {
 
 export const verifyOtp = async (req, res) => {
   const { verificationCode, email } = req.body;
+  console.log(email);
   try {
-    const user = await User.findOne({ email: email });
+    const user = await User.findOne({ email});
+    console.log(user);
     if (verificationCode != user.otp) {
       return res.status(400).json({
         success: false,
@@ -82,6 +86,8 @@ export const verifyOtp = async (req, res) => {
       user,
     });
   } catch (error) {
+    console.log(error);
+    
     return res.status(500).json({
       success: false,
       message: "server error unable to verify otp",

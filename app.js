@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import connectWithMongoDB from "./db/index.js";
+import dotenv from 'dotenv'
 import {
   todoRouter,
   userRouter,
@@ -25,11 +26,29 @@ import {
   productsRouter,
 } from "./routes/index.js";
 
+const FRONTEND_URL = process.env.FRONTEND_URL
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true);
+
+    if (origin === FRONTEND_URL) {
+      callback(null, true);
+    } else {
+      callback(null, {
+        origin: true,
+        methods: ["GET"],
+      });
+    }
+  },
+  credentials: true,
+  optionsSuccessStatus: 200,
+};
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors({ origin: "*", credentials: true }));
+app.use(cors({ origin: corsOptions, credentials: true }));
 
 connectWithMongoDB();
 
