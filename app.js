@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import connectWithMongoDB from "./db/index.js";
+import dotenv from 'dotenv'
 import {
   todoRouter,
   userRouter,
@@ -24,6 +25,8 @@ import {
   articlesRouter,
   productsRouter,
 } from "./routes/index.js";
+
+const FRONTEND_URL = process.env.FRONTEND_URL
 
 const corsOptions = {
   origin: function (origin, callback) {
