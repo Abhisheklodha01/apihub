@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import connectWithMongoDB from "./db/index.js";
 import {
   todoRouter,
@@ -21,12 +22,30 @@ import {
   carRouter,
   plantsRouter,
   articlesRouter,
-  productsRouter
+  productsRouter,
 } from "./routes/index.js";
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true);
+
+    if (origin === FRONTEND_URL) {
+      callback(null, true);
+    } else {
+      callback(null, {
+        origin: true,
+        methods: ["GET"],
+      });
+    }
+  },
+  credentials: true,
+  optionsSuccessStatus: 200,
+};
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors(corsOptions));
 
 connectWithMongoDB();
 
@@ -60,6 +79,6 @@ app.use("/api/v1/countries", countriesRouter);
 app.use("/api/v1/flowers", flowersRouter);
 app.use("/api/v1/cars", carRouter);
 app.use("/api/v1/plants", plantsRouter);
-app.use("/api/v1/articles", articlesRouter)
-app.use("/api/v1/products", productsRouter)
+app.use("/api/v1/articles", articlesRouter);
+app.use("/api/v1/products", productsRouter);
 export default app;
