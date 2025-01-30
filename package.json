@@ -14,6 +14,7 @@
     "@prisma/client": "^6.2.1",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^2.5.1",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "imagekit": "^6.0.0",
