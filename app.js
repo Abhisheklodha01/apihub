@@ -25,27 +25,11 @@ import {
   productsRouter,
 } from "./routes/index.js";
 
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (!origin) return callback(null, true);
-
-    if (origin === FRONTEND_URL) {
-      callback(null, true);
-      callback(null, { origin: true, methods: ["GET"] });
-    }
-  },
-  credentials: true,
-  methods: ["GET", "POST", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  preflightContinue: false,
-  optionsSuccessStatus: 204,
-};
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors(corsOptions));
-app.options( "*", corsOptions)
+app.use(cors({ origin: "*", credentials: true }));
 
 connectWithMongoDB();
 
