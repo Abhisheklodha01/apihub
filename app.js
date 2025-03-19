@@ -32,13 +32,12 @@ const corsOptions = {
     if (origin === FRONTEND_URL) {
       callback(null, true);
     } else {
-      callback(null, {
-        origin: true,
-        methods: ["GET"],
-      });
+      callback(null, origin && { origin: true, methods: ["GET"] });
     }
   },
   credentials: true,
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type", "Authorization"],
   optionsSuccessStatus: 200,
 };
 
