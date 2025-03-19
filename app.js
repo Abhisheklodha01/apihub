@@ -31,20 +31,21 @@ const corsOptions = {
 
     if (origin === FRONTEND_URL) {
       callback(null, true);
-    } else {
-      callback(null, origin && { origin: true, methods: ["GET"] });
+      callback(null, { origin: true, methods: ["GET"] });
     }
   },
   credentials: true,
-  methods: ["GET", "POST"],
+  methods: ["GET", "POST", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
-  optionsSuccessStatus: 200,
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
 };
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors(corsOptions));
+app.options(corsOptions)
 
 connectWithMongoDB();
 
