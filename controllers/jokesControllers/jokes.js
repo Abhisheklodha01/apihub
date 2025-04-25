@@ -43,6 +43,8 @@ export const getJokesController = async (req, res) => {
       jokes,
     });
   } catch (error) {
+    console.log(error);
+    
     return res.status(500).json({
       success: false,
       message: "Server error while fetching jokes",
