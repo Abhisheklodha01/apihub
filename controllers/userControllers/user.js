@@ -26,7 +26,7 @@ export const registerUserController = async (req, res) => {
       });
     }
 
-    const exitsedUser = await User.find({ email: email });
+    const exitsedUser = await User.findOne({ email });
     const verifyExistedUser = exitsedUser ? exitsedUser._id : undefined;
     if (verifyExistedUser != undefined) {
       return res.status(400).json({
@@ -57,7 +57,7 @@ export const registerUserController = async (req, res) => {
     });
   } catch (error) {
     console.log(error);
-    
+
     return res.status(500).json({
       success: false,
       message: "Server issue please try again after some time",
@@ -70,7 +70,7 @@ export const verifyOtp = async (req, res) => {
   const { verificationCode, email } = req.body;
   console.log(email);
   try {
-    const user = await User.findOne({ email});
+    const user = await User.findOne({ email });
     console.log(user);
     if (verificationCode != user.otp) {
       return res.status(400).json({
@@ -87,7 +87,7 @@ export const verifyOtp = async (req, res) => {
     });
   } catch (error) {
     console.log(error);
-    
+
     return res.status(500).json({
       success: false,
       message: "server error unable to verify otp",
@@ -100,7 +100,7 @@ export const resendVerificationCode = async (req, res) => {
   const { email } = req.body;
   try {
     const otp = generateOTP(6);
-    const user = await User.findOne({ email: email });
+    const user = await User.findOne({ email });
     user.otp = otp;
     await user.save();
     await sendVerificationcode(email, otp);
@@ -127,7 +127,7 @@ export const signInUserController = async (req, res) => {
       });
     }
 
-    const exitsedUser = await User.find({ email: email });
+    const exitsedUser = await User.findOne({ email });
     if (!exitsedUser) {
       return res.status(400).json({
         success: false,
@@ -163,7 +163,7 @@ export const signInUserController = async (req, res) => {
 export const forgotPasswordController = async (req, res) => {
   const { email, password } = req.body;
   try {
-    const user = await User.findOne({ email: email });
+    const user = await User.findOne({ email });
     if (!user) {
       return res.status(400).json({
         success: false,
@@ -190,6 +190,6 @@ export const getUserProfileController = async (req, res) => {
   return res.status(200).json({
     success: true,
     message: "User details find successfully",
-    user: req.user
-  })
+    user: req.user,
+  });
 };
