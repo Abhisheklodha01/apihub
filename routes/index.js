@@ -80,6 +80,13 @@ import {
   getProductsController,
   getProductByIdController,
   getRandomProductController,
+  getRandomCarController,
+  getRandomCountryController,
+  getRandomFlowerController,
+  getRandomHotelController,
+  getRandomPlantController,
+  getRandomProgrammingLanguageController,
+  getRandomRestaurantController,
 } from "../controllers/index.js";
 
 import { uploadImageMiddleware } from "../middlewares/cloudinary.js";
@@ -172,6 +179,13 @@ export {
   getProductsController,
   getProductByIdController,
   getRandomProductController,
+  getRandomCarController,
+  getRandomCountryController,
+  getRandomFlowerController,
+  getRandomHotelController,
+  getRandomPlantController,
+  getRandomProgrammingLanguageController,
+  getRandomRestaurantController,
 };
 
 import userRouter from "./userRoutes/user.route.js";

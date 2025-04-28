@@ -112,3 +112,23 @@ export const getHotelsByCityController = async (req, res) => {
     });
   }
 };
+
+
+export const getRandomHotelController = async (req, res) => {
+  try {
+    const hotels = await prisma.hotels.findMany();
+    const randomIndex = Math.floor(Math.random() * hotels.length);
+    const hotel = hotels[randomIndex];
+    return res.status(200).json({
+      success: true,
+      message: "Random book fetched successfully",
+      hotel,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Server error while fetching random book",
+      error,
+    });
+  }
+};

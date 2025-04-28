@@ -3,6 +3,7 @@ import {
   addProgrammingLanguageController,
   getProgrammingLanguageByIdController,
   getProgrammingLanguagesController,
+  getRandomProgrammingLanguageController
 } from "../index.js";
 
 const router = express.Router();
@@ -13,5 +14,6 @@ router.get(
   getProgrammingLanguageByIdController
 );
 router.get("/get-programming-languages", getProgrammingLanguagesController);
+router.get("/random", getRandomProgrammingLanguageController)
 
 export default router;

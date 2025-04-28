@@ -4,6 +4,7 @@ import {
   getAllCarsController,
   getCarByIdController,
   uploadImageMiddleware,
+  getRandomCarController
 } from "../index.js";
 
 const router = express.Router();
@@ -16,5 +17,6 @@ router.post(
 );
 router.get("/get-cars", getAllCarsController);
 router.get("/get-car/:carId", getCarByIdController);
+router.get("/random", getRandomCarController)
 
 export default router;

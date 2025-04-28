@@ -84,3 +84,23 @@ export const getProgrammingLanguageByIdController = async (req, res) => {
     });
   }
 };
+
+
+export const getRandomProgrammingLanguageController = async (req, res) => {
+  try {
+    const programmingLanguages = await prisma.programmingLanguage.findMany();
+    const randomIndex = Math.floor(Math.random() * programmingLanguages.length);
+    const programmingLanguage = programmingLanguages[randomIndex];
+    return res.status(200).json({
+      success: true,
+      message: "Random book fetched successfully",
+      programmingLanguage,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Server error while fetching random book",
+      error,
+    });
+  }
+};

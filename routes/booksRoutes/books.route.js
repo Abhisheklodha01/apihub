@@ -3,7 +3,8 @@ import {
   addBookController,
   getBooksController,
   getBookByIdController,
-  uploadImageMiddleware
+  uploadImageMiddleware,
+  getRandomBookController
 } from "../index.js";
 
 const router = express.Router();
@@ -17,5 +18,6 @@ router.post(
 
 router.get("/get-books", getBooksController);
 router.get("/get-books/:bookId", getBookByIdController);
+router.get("/random", getRandomBookController)
 
 export default router;

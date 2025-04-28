@@ -4,6 +4,7 @@ import {
   getImagesController,
   uploadImageController,
   uploadImageMiddleware,
+  getRandomImageController
 } from "../index.js";
 
 const router = express.Router();
@@ -17,5 +18,6 @@ router.post(
 
 router.get("/get-images", getImagesController);
 router.get("/get-images/:imageId", getImageByIdController);
+router.get("/random", getRandomImageController)
 
 export default router;

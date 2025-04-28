@@ -4,6 +4,7 @@ import {
   getAllFlowersController,
   getFlowerByIdController,
   uploadImageMiddleware,
+  getRandomFlowerController
 } from "../index.js";
 
 const router = express.Router();
@@ -16,5 +17,6 @@ router.post(
 );
 router.get("/get-flowers", getAllFlowersController);
 router.get("/get-flower/:flowerId", getFlowerByIdController);
+router.get("/random", getRandomFlowerController)
 
 export default router;
