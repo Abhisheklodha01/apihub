@@ -4,6 +4,7 @@ import {
  getMoviesController,
  getMovieByIdController,
  uploadImageMiddleware,
+ getRandomMovieController
 } from "../index.js";
 
 const router = express.Router();
@@ -17,5 +18,6 @@ router.post(
 
 router.get("/get-movies", getMoviesController);
 router.get("/get-movies/:movieId", getMovieByIdController);
+router.get("/random", getRandomMovieController)
 
 export default router;

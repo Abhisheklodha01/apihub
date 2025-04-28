@@ -129,3 +129,23 @@ export const getRestaurationsByCityController = async (req, res) => {
     });
   }
 };
+
+
+export const getRandomRestaurantController = async (req, res) => {
+  try {
+    const restaurants = await prisma.restaurants.findMany();
+    const randomIndex = Math.floor(Math.random() * restaurants.length);
+    const restaurant = restaurants[randomIndex];
+    return res.status(200).json({
+      success: true,
+      message: "Random book fetched successfully",
+      restaurant,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Server error while fetching random book",
+      error,
+    });
+  }
+};

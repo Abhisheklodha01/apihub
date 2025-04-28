@@ -83,6 +83,7 @@ import {
   getRestaurantByIdController,
   getRestaurantsController,
   getRestaurationsByCityController,
+  getRandomRestaurantController
 } from "./restaurantsControllers/restaurants.js";
 
 import {
@@ -97,36 +98,42 @@ import {
   getHotelByIdController,
   getHotelsController,
   getHotelsByCityController,
+  getRandomHotelController
 } from "./hotelControllers/hotel.js";
 
 import {
   addProgrammingLanguageController,
   getProgrammingLanguageByIdController,
   getProgrammingLanguagesController,
+  getRandomProgrammingLanguageController
 } from "./programmingLanguagesControllers/programming.js";
 
 import {
   addCountryController,
   getCountriesController,
   getCountryByIdController,
+  getRandomCountryController
 } from "./countryControllers/country.js";
 
 import {
   addFlowersController,
   getAllFlowersController,
   getFlowerByIdController,
+  getRandomFlowerController
 } from "./flowersControllers/flowers.js";
 
 import {
   addCarsController,
   getAllCarsController,
   getCarByIdController,
+  getRandomCarController
 } from "./carsControllers/cars.js";
 
 import {
   addPlantsController,
   getAllPlantsController,
   getPlantByIdController,
+  getRandomPlantController
 } from "./plantsControllers/plants.js";
 import {
   addArticleController,
@@ -225,4 +232,11 @@ export {
   getProductsController,
   getProductByIdController,
   getRandomProductController,
+  getRandomCarController,
+  getRandomCountryController,
+  getRandomFlowerController,
+  getRandomHotelController,
+  getRandomPlantController,
+  getRandomProgrammingLanguageController,
+  getRandomRestaurantController,
 };

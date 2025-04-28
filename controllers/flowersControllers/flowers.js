@@ -83,3 +83,23 @@ export const getFlowerByIdController = async (req, res) => {
     });
   }
 };
+
+
+export const getRandomFlowerController = async (req, res) => {
+  try {
+    const flowers = await prisma.flowers.findMany();
+    const randomIndex = Math.floor(Math.random() * flowers.length);
+    const flower = flowers[randomIndex];
+    return res.status(200).json({
+      success: true,
+      message: "Random book fetched successfully",
+      flower,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Server error while fetching random book",
+      error,
+    });
+  }
+};

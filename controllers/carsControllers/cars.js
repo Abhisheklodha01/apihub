@@ -84,3 +84,23 @@ export const getCarByIdController = async (req, res) => {
     });
   }
 };
+
+
+export const getRandomCarController = async (req, res) => {
+  try {
+    const cars = await prisma.cars.findMany();
+    const randomIndex = Math.floor(Math.random() * cars.length);
+    const car = cars[randomIndex];
+    return res.status(200).json({
+      success: true,
+      message: "Random book fetched successfully",
+      car,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Server error while fetching random book",
+      error,
+    });
+  }
+};

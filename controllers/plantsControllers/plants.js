@@ -82,3 +82,23 @@ export const getPlantByIdController = async (req, res) => {
     });
   }
 };
+
+
+export const getRandomPlantController = async (req, res) => {
+  try {
+    const plants = await prisma.plants.findMany();
+    const randomIndex = Math.floor(Math.random() * plants.length);
+    const plant = plants[randomIndex];
+    return res.status(200).json({
+      success: true,
+      message: "Random book fetched successfully",
+      plant,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Server error while fetching random book",
+      error,
+    });
+  }
+};

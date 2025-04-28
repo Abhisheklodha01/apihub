@@ -90,3 +90,23 @@ export const getCountryByIdController = async (request, res) => {
       });
     }
 }
+
+
+export const getRandomCountryController = async (req, res) => {
+  try {
+    const countries = await prisma.country.findMany();
+    const randomIndex = Math.floor(Math.random() * countries.length);
+    const country = countries[randomIndex];
+    return res.status(200).json({
+      success: true,
+      message: "Random book fetched successfully",
+      country,
+    });
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Server error while fetching random book",
+      error,
+    });
+  }
+};
