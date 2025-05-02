@@ -24,6 +24,7 @@ import {
   plantsRouter,
   articlesRouter,
   productsRouter,
+  adminRouter
 } from "./routes/index.js";
 
 const FRONTEND_URL = process.env.FRONTEND_URL
@@ -84,4 +85,6 @@ app.use("/api/v1/cars", carRouter);
 app.use("/api/v1/plants", plantsRouter);
 app.use("/api/v1/articles", articlesRouter);
 app.use("/api/v1/products", productsRouter);
+app.use("/api/v1/admin", adminRouter)
+
 export default app;
