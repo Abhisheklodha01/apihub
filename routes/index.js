@@ -87,11 +87,13 @@ import {
   getRandomPlantController,
   getRandomProgrammingLanguageController,
   getRandomRestaurantController,
+  getDBDataDetails
 } from "../controllers/index.js";
 
 import { uploadImageMiddleware } from "../middlewares/cloudinary.js";
 import { isAuthenticated } from "../middlewares/auth.js";
 import { uploadVideoMiddleware, upload } from "../middlewares/imageKit.js";
+import { isAdmin } from "../middlewares/adminAuth.js";
 
 export {
   verifyOtp,
@@ -108,6 +110,7 @@ export {
   getImageByIdController,
   getImagesController,
   isAuthenticated,
+  isAdmin,
   uploadCatController,
   getAllCatsController,
   addDogsController,
@@ -186,6 +189,7 @@ export {
   getRandomPlantController,
   getRandomProgrammingLanguageController,
   getRandomRestaurantController,
+  getDBDataDetails
 };
 
 import userRouter from "./userRoutes/user.route.js";
@@ -209,6 +213,8 @@ import carRouter from "./carRoutes/car.route.js";
 import plantsRouter from "./plantsRoutes/plant.route.js";
 import articlesRouter from "./articleRoutes/article.route.js";
 import productsRouter from "./productsRoutes/products.route.js";
+import adminRouter from "./adminRoutes/admin.route.js"
+
 export {
   userRouter,
   todoRouter,
@@ -231,4 +237,5 @@ export {
   plantsRouter,
   articlesRouter,
   productsRouter,
+  adminRouter
 };

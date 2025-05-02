@@ -148,6 +148,9 @@ import {
   getProductByIdController,
   getRandomProductController,
 } from "./productsControllers/products.js";
+
+import { getDBDataDetails } from "./admin/dataDetails.js";
+
 export {
   verifyOtp,
   resendVerificationCode,
@@ -239,4 +242,5 @@ export {
   getRandomPlantController,
   getRandomProgrammingLanguageController,
   getRandomRestaurantController,
+  getDBDataDetails
 };
